@@ -1,0 +1,15 @@
+name: 'Amiga Build OS4'
+description: 'Build a project for Amiga OS4'
+inputs:
+  command:
+    description: 'Command to execute for building'
+    default: 'make'
+  directory:
+    description: 'Directory in which to run the build'
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.directory }}
+    - ${{ inputs.command }}
